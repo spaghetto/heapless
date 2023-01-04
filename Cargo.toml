@@ -25,17 +25,20 @@ mpmc_large = []
 # This flag has no version guarantee, the `defmt` dependency can be updated in a patch release
 defmt-impl = ["defmt"]
 
-[target.thumbv6m-none-eabi.dependencies]
-atomic-polyfill = { version = "1.0.1", optional = true }
+[target.armv4t-none-eabi.dependencies]
+atomic-polyfill = { git = "https://github.com/spaghetto/atomic-polyfill", rev = "48b3d29344f3e79d544b969c1040e58e6657d9c2", optional = true }
 
-[target.riscv32i-unknown-none-elf.dependencies]
-atomic-polyfill = { version = "1.0.1" }
+# [target.thumbv6m-none-eabi.dependencies]
+# atomic-polyfill = { version = "1.0.1", optional = true }
 
-[target.riscv32imc-unknown-none-elf.dependencies]
-atomic-polyfill = { version = "1.0.1" }
+# [target.riscv32i-unknown-none-elf.dependencies]
+# atomic-polyfill = { version = "1.0.1" }
 
-[target.'cfg(target_arch = "avr")'.dependencies]
-atomic-polyfill = { version = "1.0.1", optional = true }
+# [target.riscv32imc-unknown-none-elf.dependencies]
+# atomic-polyfill = { version = "1.0.1" }
+
+# [target.'cfg(target_arch = "avr")'.dependencies]
+# atomic-polyfill = { version = "1.0.1", optional = true }
 
 [dependencies]
 hash32 = "0.3.0"

@@ -81,6 +81,11 @@ fn main() -> Result<(), Box<dyn Error>> {
                 println!("cargo:rustc-cfg=cas_atomic_polyfill");
             }
 
+            "armv4t-none-eabi" => {
+                println!("cargo:rustc-cfg=full_atomic_polyfill");
+                println!("cargo:rustc-cfg=cas_atomic_polyfill");
+            }
+
             "thumbv6m-none-eabi" => {
                 println!("cargo:rustc-cfg=cas_atomic_polyfill");
             }
